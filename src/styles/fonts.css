@@ -1,0 +1,44 @@
+/* VANITAS — Titulares (Bold + ExtraBold) */
+@font-face {
+  font-family: "VANITAS";
+  src: url("/Tipografias/Vanitas-Bold/Vanitas Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VANITAS";
+  src: url("/Tipografias/Vanitas-Extrabold/Vanitas ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lota Grotesque — Textos (Regular + SemiBold) */
+@font-face {
+  font-family: "Lota Grotesque";
+  src: url("/Tipografias/Lota Grotesque/Los Andes - Lota Grotesque Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lota Grotesque";
+  src: url("/Tipografias/Lota Grotesque/Los Andes - Lota Grotesque Semi Bold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Silver South Script — Destacados (Regular) */
+@font-face {
+  font-family: "Silver South Script";
+  src: url("/Tipografias/Silver South Script/Silver South Script.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

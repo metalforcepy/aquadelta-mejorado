@@ -1,0 +1,53 @@
+schema: spec-driven
+
+context: |
+  Project: Aquadelta — real estate landing page (one-page, 9 sections)
+  Stack: HTML, CSS, JavaScript vanilla — no framework, no backend, no CMS
+  Dependencies: Swiper.js (carousels), Lucide Icons or Phosphor Icons
+  Fonts: VANITAS (titles), Lota Grotesque (body), Silver South Script (highlights)
+  Colors: #005587 (azul), #D9D9D6 (tiza), #88DBDF (turquesa), #FF7F32 (naranja)
+  Source: guia-desarrollo.md (392-line development guide), Render assets
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns from guia-desarrollo.md
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "open index.html  # manual: verify page loads without console errors"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  detected: "2026-06-24"
+  runner:
+    command: ""
+    framework: none
+  layers:
+    unit: { available: false, tool: "—" }
+    integration: { available: false, tool: "—" }
+    e2e: { available: false, tool: "—" }
+  coverage:
+    available: false
+    command: "—"
+  quality:
+    linter: { available: false, command: "—" }
+    type_checker: { available: false, command: "—" }
+    formatter: { available: false, command: "—" }
+  notes: |
+    No test runner, linter, or type checker available. This is a static landing
+    page project. Verification is manual: open index.html and check the browser
+    console for errors. Strict TDD is OFF.

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated assets (pre-build outputs)
+public/images/
+
+# Large source files (exceeds GitHub 100MB limit)
+Renders Aquadelta/Renders animados/renders_animados_aquadelta.MOV
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local

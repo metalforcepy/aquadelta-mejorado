@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-azul: #005587;
+  --color-tiza: #D9D9D6;
+  --color-turquesa: #88DBDF;
+  --color-naranja: #FF7F32;
+
+  --font-titulares: "VANITAS", serif;
+  --font-textos: "Lota Grotesque", sans-serif;
+  --font-destacados: "Silver South Script", cursive;
+
+  --breakpoint-sm: 768px;
+  --breakpoint-lg: 1024px;
+}
+
+/*
+  Base layer: tiza background, smooth scroll, no white anywhere.
+*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-tiza);
+    color: var(--color-azul);
+    font-family: var(--font-textos);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

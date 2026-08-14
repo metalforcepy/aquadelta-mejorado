@@ -1,0 +1,92 @@
+{
+  "brand": {
+    "name": "Aquadelta",
+    "slogan": "Redescubrí la vida sobre el río"
+  },
+  "hero": {
+    "title": "AQUADELTA",
+    "cta": "Quiero más info",
+    "logoAlt": "Aquadelta",
+    "stats": {
+      "hectareas": "Hectáreas",
+      "barrios": "Barrios",
+      "financiacion": "Años de financiación",
+      "ejeCorporativo": "Min del eje corporativo",
+      "plusvalia": "Plusvalía"
+    }
+  },
+  "nav": {
+    "elProyecto": "El Proyecto",
+    "ubicacion": "Ubicación",
+    "barrios": "Barrios",
+    "amenities": "Amenities",
+    "costanera": "Costanera",
+    "paseoCentral": "Paseo Central",
+    "deportes": "Deportes",
+    "comercial": "Comercial",
+    "galeria": "Galería",
+    "noticias": "Noticias",
+    "abrirMenu": "Abrir menú",
+    "cerrarMenu": "Cerrar menú"
+  },
+  "elProyecto": {
+    "title": "EL PROYECTO",
+    "highlight": "A orillas del río, una nueva forma de vivir",
+    "body": "Con más de 2.000.000 m² de desarrollo planeado y más de 200 hectáreas de entorno natural, el proyecto ofrece marina privativa, muelle de amarras, guardería náutica, laguna WaveTech con playas de arena blanca, Club House, campus educativo, área deportiva y espacios comerciales.",
+    "stats": [
+      "Entorno natural",
+      "Lago natural",
+      "Marina",
+      "De Asunción"
+    ],
+    "imageAlt": "Planta general del proyecto Aquadelta"
+  },
+  "ubicacion": {
+    "title": "UBICACIÓN",
+    "body": "A solo 20 minutos del eje corporativo de Asunción, en el Distrito Norte, una de las zonas con mayor potencial de valorización del Paraguay."
+  },
+  "costanera": {
+    "title": "LA COSTANERA",
+    "highlight": "Vivir frente al río es transformar cada vista en un privilegio",
+    "subtitle": "BARRIO REGATAS SUR",
+    "body": "Regatas Sur es un barrio residencial premium concebido para quienes valoran exclusividad, naturaleza y vistas inigualables. Con lotes frente al río, acceso directo, laguna natural de 3.9 hectáreas, marina e infraestructura náutica exclusiva."
+  },
+  "barrios": {
+    "title": "BARRIOS",
+    "body": "Tres barrios con identidad propia, cada uno diseñado para un estilo de vida diferente. Todos conectados por el paseo central y con acceso a la costanera.",
+    "names": [
+      "Barrio 1",
+      "Barrio 2",
+      "Barrio 3"
+    ]
+  },
+  "paseoCentral": {
+    "title": "PASEO CENTRAL",
+    "highlight": "El corazón de Aquadelta",
+    "body": "Un boulevard arbolado que conecta todos los barrios. El paseo central es el eje vertebrador del proyecto: locales comerciales, espacios de descanso, y acceso directo a todos los amenities."
+  },
+  "deportes": {
+    "title": "DEPORTES",
+    "body": "Un área deportiva completa para todas las edades. Canchas, espacios de entrenamiento, y zonas de recreación al aire libre rodeadas de naturaleza."
+  },
+  "comercial": {
+    "title": "ZONA COMERCIAL",
+    "body": "Locales, escuela, y todo lo necesario para la vida diaria, integrado dentro del predio. La zona comercial de Aquadelta está pensada para que no tengas que salir del barrio para nada."
+  },
+  "galeria": {
+    "title": "CONOCÉ AQUADELTA",
+    "highlight": "Mirá el video"
+  },
+  "noticias": {
+    "title": "NOTICIAS",
+    "loading": "Cargando noticias...",
+    "error": "No se pudieron cargar las noticias.",
+    "empty": "No hay noticias en este idioma.",
+    "back": "← Volver",
+    "notFound": "Noticia no encontrada",
+    "notFoundDesc": "La noticia que buscás no existe o fue eliminada."
+  },
+  "footer": {
+    "copyright": "© {{year}} Aquadelta. Todos los derechos reservados."
+  }
+}
