@@ -13,7 +13,7 @@ export default function VideoBackground({
   webm,
   poster,
   fallbackImages,
-  overlay = "rgba(0, 85, 135, 0.5)",
+  overlay = "rgba(11, 57, 83, 0.5)",
 }: VideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);

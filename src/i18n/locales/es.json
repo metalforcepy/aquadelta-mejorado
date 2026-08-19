@@ -15,6 +15,14 @@
       "plusvalia": "Plusvalía"
     }
   },
+"distritoNorte": {
+    "title": "El crecimiento se mueve hacia Distrito Norte",
+    "subtitle": "Una ubicación pensada para vivir hoy y proyectar el mañana",
+    "stat1": "+168% de crecimiento poblacional en los últimos 30 años",
+    "stat2": "Conectividad estratégica con el eje corporativo de Asunción",
+    "stat3": "Crecimiento comercial constante"
+  },
+  
   "nav": {
     "elProyecto": "El Proyecto",
     "ubicacion": "Ubicación",
@@ -90,3 +98,4 @@
     "copyright": "© {{year}} Aquadelta. Todos los derechos reservados."
   }
 }
+

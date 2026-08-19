@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-azul: #005587;
+  --color-azul: #0c3a54;
   --color-tiza: #D9D9D6;
   --color-turquesa: #88DBDF;
   --color-naranja: #FF7F32;
@@ -23,7 +23,7 @@
   }
 
   body {
-    background-color: var(--color-tiza);
+    background-color: #0c3a54;
     color: var(--color-azul);
     font-family: var(--font-textos);
     -webkit-font-smoothing: antialiased;
