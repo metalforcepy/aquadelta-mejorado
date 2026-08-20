@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Download, MessageCircle, Sparkles, CheckCircle2, Compass } from "lucide-react";
+import { Download, MessageCircle, Sparkles, Compass, X } from "lucide-react";
 import SectionWrapper from "../shared/SectionWrapper";
 import LazyImage from "../shared/LazyImage";
 import { PROJECT_MASTERPLAN } from "../../data/content";
@@ -13,6 +13,7 @@ interface AmenityHotspot {
   description: string;
   top: number;  // % vertical exacto
   left: number; // % horizontal exacto
+  image?: string;
 }
 
 const AMENITIES_LIST: AmenityHotspot[] = [
@@ -23,6 +24,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Infraestructura educativa integrada dentro del predio.",
     top: 23,
     left: 92.5,
+    image: "/Renders Aquadelta/Campus/campus.jpg",
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Locales comerciales y gastronómicos sobre el acceso.",
     top: 31.5,
     left: 92.8,
+    image: "/Renders Aquadelta/Comercial/paseo.jpg",
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Canchas de tenis, pádel, fútbol y polideportivo.",
     top: 22.8,
     left: 82.8,
+    image: "/Renders Aquadelta/Deportes/deportes.jpg",
   },
   {
     id: 4,
@@ -47,6 +51,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Sector residencial consolidado con lotes náuticos.",
     top: 50.5,
     left: 57.0,
+    image: "/Renders Aquadelta/Barrios/navegantes.jpg",
   },
   {
     id: 5,
@@ -55,6 +60,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Laguna cristalina con tecnología de olas y playas de arena blanca.",
     top: 49.8,
     left: 44.0,
+    image: "/Renders Aquadelta/Laguna/wavetech.jpg",
   },
   {
     id: 6,
@@ -63,6 +69,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Lotes con amarras y salida directa al circuito náutico.",
     top: 70.5,
     left: 47.6,
+    image: "/Renders Aquadelta/Barrios/veleros.jpg",
   },
   {
     id: 7,
@@ -71,6 +78,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Sector exclusivo con espejos de agua y senderos.",
     top: 75.2,
     left: 17.5,
+    image: "/Renders Aquadelta/Barrios/intermedia.jpg",
   },
   {
     id: 8,
@@ -79,6 +87,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Lotes sobre laguna interna con muelles y visuales directas.",
     top: 69.5,
     left: 6,
+    image: "/Renders Aquadelta/Barrios/regatas.jpg",
   },
   {
     id: 9,
@@ -87,6 +96,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Restaurante, lounge social y piscinas de borde infinito.",
     top: 65.0,
     left: 9.2,
+    image: "/Renders Aquadelta/Clubhouse/clubhouse.jpg",
   },
   {
     id: 10,
@@ -95,6 +105,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Salida directa de navegación continua al Río Paraguay.",
     top: 52.5,
     left: 7.0,
+    image: "/Renders Aquadelta/Nautica/riacho.jpg",
   },
   {
     id: 11,
@@ -103,6 +114,7 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Hangar techado para guarda y bajada de embarcaciones.",
     top: 37.5,
     left: 14.0,
+    image: "/Renders Aquadelta/Nautica/guarderia.jpg",
   },
   {
     id: 12,
@@ -111,19 +123,13 @@ const AMENITIES_LIST: AmenityHotspot[] = [
     description: "Penínsulas residenciales rodeadas de agua y vegetación.",
     top: 48.5,
     left: 17.0,
+    image: "/Renders Aquadelta/Barrios/regatas-norte.jpg",
   },
 ];
 
 export default function ProjectSection() {
   const { t } = useTranslation();
   const [activeSpot, setActiveSpot] = useState<AmenityHotspot | null>(null);
-
-  const keyFeatures = [
-    "97 Lotes Náuticos Exclusivos",
-    "Amarras Propias de Calado Profundo",
-    "Laguna WaveTech & Playas",
-    "Seguridad Integral 24/7",
-  ];
 
   return (
     <SectionWrapper
@@ -134,7 +140,7 @@ export default function ProjectSection() {
       {/* Resplandores ambientales de fondo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-[#001e33]  blur-[160px]"
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-[#001e33] blur-[160px]"
       />
       <div
         aria-hidden="true"
@@ -185,15 +191,15 @@ export default function ProjectSection() {
         </motion.p>
       </div>
 
-      {/* 2. MAPA A PANTALLA COMPLETA (FULL-WIDTH 100%) */}
+      {/* 2. MAPA A PANTALLA COMPLETA */}
       <div className="w-full relative px-2 sm:px-4 lg:px-6 mb-8">
         <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#001e33] border border-white/10 shadow-2xl">
           
-          {/* Scroll horizontal automático en móvil para proteger el render */}
+          {/* Scroll horizontal en móvil */}
           <div className="relative w-full overflow-x-auto no-scrollbar">
             <div className="relative w-full min-w-[760px] sm:min-w-full">
               
-              {/* Imagen del mapa que ocupa todo el ancho */}
+              {/* Imagen del mapa */}
               <LazyImage
                 src={PROJECT_MASTERPLAN.src}
                 alt={t("elProyecto.imageAlt")}
@@ -223,7 +229,7 @@ export default function ProjectSection() {
                       )}
 
                       <span
-                        className={`relative flex h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 items-center justify-center rounded-full border border-[#E5B263] bg-[#001e33] font-['VANITAS'] text-[9px] sm:text-[11px] lg:text-xs font-bold text-white shadow-xl transition-all duration-300 ${
+                        className={`relative flex h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 items-center justify-center rounded-full border border-[#E5B263] bg-[#001e33] font-titulares text-[9px] sm:text-[11px] lg:text-xs font-bold text-white shadow-xl transition-all duration-300 ${
                           isSelected
                             ? "bg-[#E5B263] text-[#002f4d] border-white scale-110 shadow-[0_0_15px_rgba(229,178,99,0.9)]"
                             : "group-hover:border-white group-hover:bg-[#004068]"
@@ -232,29 +238,6 @@ export default function ProjectSection() {
                         {item.id}
                       </span>
                     </button>
-
-                    {/* Tooltip Card descriptivo */}
-                    <AnimatePresence>
-                      {isSelected && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 w-48 sm:w-56 rounded-xl bg-[#00273f]/95 backdrop-blur-md p-3 text-left shadow-2xl border border-[#E5B263]/60 z-30 pointer-events-none"
-                        >
-                          <div className="flex items-center gap-1.5 text-[#E5B263] mb-1">
-                            <Sparkles size={12} />
-                            <span className="font-textos text-xs font-bold uppercase tracking-wider">
-                              {item.id}. {item.label}
-                            </span>
-                          </div>
-                          <p className="font-textos text-[11px] text-[#D9D9D6]/90 leading-snug">
-                            {item.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </div>
                 );
               })}
@@ -276,6 +259,64 @@ export default function ProjectSection() {
 
             </div>
           </div>
+
+          {/* POP-UP FLUIDO Y ESCALABLE ABAJO A LA DERECHA */}
+          <AnimatePresence>
+            {activeSpot && (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                transition={{ duration: 0.25 }}
+                className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:bottom-6 lg:right-6 z-40 
+                           w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[420px] 2xl:w-[460px] 
+                           bg-white rounded-2xl lg:rounded-3xl shadow-2xl border border-black/10 overflow-hidden"
+              >
+                {/* Botón cerrar */}
+                <button
+                  type="button"
+                  onClick={() => setActiveSpot(null)}
+                  className="absolute top-2.5 right-2.5 lg:top-3 lg:right-3 z-20 h-7 w-7 lg:h-9 lg:w-9 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors shadow-md"
+                  aria-label="Cerrar detalle"
+                >
+                  <X className="w-3.5 h-3.5 lg:w-5 lg:h-5" />
+                </button>
+
+                {/* Foto escalada proporcionalmente */}
+                <div className="w-full h-28 sm:h-36 md:h-44 lg:h-52 xl:h-60 bg-[#001e33] relative overflow-hidden">
+                  {activeSpot.image ? (
+                    <img
+                      src={activeSpot.image}
+                      alt={activeSpot.label}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[#E5B263]/60">
+                      <Sparkles className="w-6 h-6 lg:w-10 lg:h-10" />
+                    </div>
+                  )}
+                  {/* Badge de número sobre la imagen */}
+                  <span className="absolute bottom-2.5 left-2.5 lg:bottom-3 lg:left-3 bg-[#002f4d]/90 backdrop-blur-md text-[#E5B263] font-titulares font-bold text-xs lg:text-sm px-2.5 py-1 rounded-md lg:rounded-lg border border-white/20 shadow-md">
+                    Punto #{activeSpot.id}
+                  </span>
+                </div>
+
+                {/* Contenido descriptivo escalado */}
+                <div className="p-3.5 sm:p-4 md:p-5 lg:p-6 text-left">
+                  <span className="block text-[#005587] font-textos text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider mb-1">
+                    {activeSpot.category}
+                  </span>
+                  <h4 className="font-textos text-[#003452] text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight mb-1.5 lg:mb-2">
+                    {activeSpot.label}
+                  </h4>
+                  <p className="font-textos text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-600 leading-snug lg:leading-relaxed">
+                    {activeSpot.description}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
         </div>
 
         {/* 3. BARRA INFERIOR DE AMENITIES RESPONSIVE */}
@@ -316,7 +357,7 @@ export default function ProjectSection() {
         </div>
       </div>
 
-      {/* 4. Barra de Diferenciales + Botones CTA */}
+      {/* 4. Botones CTA */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -325,28 +366,25 @@ export default function ProjectSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6 border-t border-white/10"
         >
-
-
-          {/* Botones de Acción */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full shrink-0 mx-auto">
-  <a
-    href="#contacto"
-    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#E5B263] hover:bg-[#D4A152] text-[#003452] px-7 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-bold shadow-xl shadow-[#E5B263]/25 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
-  >
-    <Download size={16} />
-    <span>Descargar Masterplan PDF</span>
-  </a>
+            <a
+              href="#contacto"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#E5B263] hover:bg-[#D4A152] text-[#003452] px-7 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-bold shadow-xl shadow-[#E5B263]/25 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
+            >
+              <Download size={16} />
+              <span>Descargar Masterplan PDF</span>
+            </a>
 
-  <a
-    href="https://wa.me/XXXXXXXXXXX"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 hover:border-[#E5B263] bg-white/[0.05] hover:bg-white/10 text-white px-6 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-medium transition-all duration-300 active:scale-95 text-center"
-  >
-    <MessageCircle size={16} className="text-[#E5B263]" />
-    <span>Consultar Lotes</span>
-  </a>
-</div>
+            <a
+              href="https://wa.me/XXXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 hover:border-[#E5B263] bg-white/[0.05] hover:bg-white/10 text-white px-6 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-medium transition-all duration-300 active:scale-95 text-center"
+            >
+              <MessageCircle size={16} className="text-[#E5B263]" />
+              <span>Consultar Lotes</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </SectionWrapper>
