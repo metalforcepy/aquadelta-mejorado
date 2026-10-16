@@ -50,21 +50,25 @@ export const BARRIOS: BarrioCardData[] = [
     label: "", 
     folderPath: "Barrio 1", 
     image: "Barrio 1 - Pespectiva 01.png", 
-    secondaryImages: ["Barrio 1 - Peaton 01.jpeg", "Barrio 1 - Detalle 01.jpeg"] 
+    secondaryImages: ["Barrio 1 - Peaton 01.jpeg", "Barrio 1 - Detalle 01.jpeg"],
+    // Coordenadas sobre /planta-general/PLANTA GENERAL_02.png (mismas del hotspot 4)
+    planHotspot: { top: 50.5, left: 57.0 },
   },
   { 
     id: "barrio-2", 
     label: "", 
     folderPath: "Barrio 2", 
     image: "Barrio 2 - perspectiva 01.jpeg", 
-    secondaryImages: ["Barrio 2 - Peaton 01.png", "DETALLE BARRIO 02.jpeg"] 
+    secondaryImages: ["Barrio 2 - Peaton 01.png", "DETALLE BARRIO 02.jpeg"],
+    planHotspot: { top: 70.5, left: 47.6 },
   },
   { 
     id: "barrio-3", 
     label: "", 
     folderPath: "Barrio 4", 
     image: "BARRIO 3 - PERSPECTIVA 1.jpeg", 
-    secondaryImages: ["BARRIO 3 - PEATON 01.jpeg", "BARRIO 3 - PERSPECTIVA 02.jpeg"] 
+    secondaryImages: ["BARRIO 3 - PEATON 01.jpeg", "BARRIO 3 - PERSPECTIVA 02.jpeg"],
+    planHotspot: { top: 69.5, left: 6 },
   },
 ];
 

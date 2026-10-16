@@ -32,7 +32,8 @@
   "elProyecto": {
     "title": "THE PROJECT",
     "highlight": "On the river's edge, a new way of living",
-    "body": "With over 2,000,000 m² of planned development and more than 200 hectares of natural surroundings, the project offers a private marina, mooring dock, nautical services, WaveTech lagoon with white sand beaches, Club House, educational campus, sports area, and commercial spaces.",
+    "body": "With over 2,000,000 m² of planned development and more than 200 hectares of natural surroundings, the project offers a private marina, mooring dock, nautical services, WaveTech lagoon with white sand beaches, club house, educational campus, sports area, and commercial spaces.",
+    "ctaLotes": "Enquire about lots",
     "stats": [
       "Natural surroundings",
       "Natural lake",
@@ -43,6 +44,9 @@
   },
   "ubicacion": {
     "title": "LOCATION",
+    "eyebrow": "Northern District",
+    "mapAlt": "Aquadelta location map",
+    "mapsCta": "Open in Google Maps",
     "body": "Just 20 minutes from the corporate hub of Asunción, in the Northern District, one of the areas with the greatest appreciation potential in Paraguay."
   },
   "costanera": {
@@ -52,12 +56,20 @@
     "body": "Regatas Sur is a premium residential neighborhood designed for those who value exclusivity, nature, and unparalleled views. With riverfront lots, direct access, a 3.9-hectare natural lagoon, marina, and exclusive nautical infrastructure."
   },
   "barrios": {
-    "title": "NEIGHBORHOODS",
-    "body": "Three neighborhoods with their own identity, each designed for a different lifestyle. All connected by the central walkway and with access to the waterfront.",
+    "title": "Choose where your next story begins",
+    "body": "The masterplan includes nine residential neighborhoods, each with its own identity. Navegantes, Veleros and Regatas Sur are the first neighborhoods available to discover and choose today.",
+    "badge": "Available neighborhood",
+    "verFotos": "View renders",
+    "planAlt": "Aquadelta general plan",
     "names": [
-      "Neighborhood 1",
-      "Neighborhood 2",
-      "Neighborhood 3"
+      "Navegantes",
+      "Veleros",
+      "Regatas Sur"
+    ],
+    "descriptions": [
+      "Consolidated residential sector with nautical lots, connected by the central walkway.",
+      "Lots with moorings and direct access to the nautical circuit.",
+      "Lots on the inner lagoon with docks and direct views."
     ]
   },
   "paseoCentral": {
@@ -74,8 +86,9 @@
     "body": "Shops, school, and everything needed for daily life, integrated within the grounds. Aquadelta's commercial area is designed so you never have to leave the neighborhood for anything."
   },
   "galeria": {
-    "title": "DISCOVER AQUADELTA",
-    "highlight": "Watch the video"
+    "badge": "Masterplan & Amenities",
+    "title": "Everything you imagine, in one place.",
+    "highlight": "Discover every space and experience at Aquadelta"
   },
   "noticias": {
     "title": "NEWS",

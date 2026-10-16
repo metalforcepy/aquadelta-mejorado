@@ -10,6 +10,7 @@ const UbicacionSection = lazy(() => import("./components/sections/UbicacionSecti
 const DistritoNorteSection = lazy(() => import("./components/sections/DistritoNorteSection"));
 const BarriosSection = lazy(() => import("./components/sections/BarriosSection"));
 const AmenitiesSection = lazy(() => import("./components/sections/AmenitiesSection"));
+const GallerySection = lazy(() => import("./components/sections/GallerySection"));
 const NoticiasSection = lazy(() => import("./components/sections/NoticiasSection"));
 const NoticiaDetallePage = lazy(() => import("./components/sections/NoticiaDetallePage"));
 
@@ -30,6 +31,7 @@ function LandingPage() {
       <DistritoNorteSection />
       <BarriosSection />
       <AmenitiesSection />
+      <GallerySection />
       <NoticiasSection />
     </Suspense>
   );

@@ -32,7 +32,8 @@
   "elProyecto": {
     "title": "O PROJETO",
     "highlight": "Às margens do rio, uma nova forma de viver",
-    "body": "Com mais de 2.000.000 m² de desenvolvimento planejado e mais de 200 hectares de entorno natural, o projeto oferece marina privativa, cais de amarração, serviços náuticos, lagoa WaveTech com praias de areia branca, Club House, campus educacional, área esportiva e espaços comerciais.",
+    "body": "Com mais de 2.000.000 m² de desenvolvimento planejado e mais de 200 hectares de entorno natural, o projeto oferece marina privada, cais de amarração, serviços náuticos, lagoa WaveTech com praias de areia branca, club house, campus educacional, área esportiva e espaços comerciais.",
+    "ctaLotes": "Consultar lotes",
     "stats": [
       "Entorno natural",
       "Lago natural",
@@ -43,6 +44,9 @@
   },
   "ubicacion": {
     "title": "LOCALIZAÇÃO",
+    "eyebrow": "Distrito Norte",
+    "mapAlt": "Mapa de localização da Aquadelta",
+    "mapsCta": "Abrir no Google Maps",
     "body": "A apenas 20 minutos do eixo corporativo de Assunção, no Distrito Norte, uma das zonas com maior potencial de valorização do Paraguai."
   },
   "costanera": {
@@ -52,12 +56,20 @@
     "body": "Regatas Sur é um bairro residencial premium concebido para quem valoriza exclusividade, natureza e vistas incomparáveis. Com lotes à beira do rio, acesso direto, lagoa natural de 3,9 hectares, marina e infraestrutura náutica exclusiva."
   },
   "barrios": {
-    "title": "BAIRROS",
-    "body": "Três bairros com identidade própria, cada um projetado para um estilo de vida diferente. Todos conectados pelo passeio central e com acesso à orla.",
+    "title": "Escolha onde começa a sua próxima história",
+    "body": "O masterplan contempla nove bairros residenciais, cada um com identidade própria. Navegantes, Veleros e Regatas Sur são os primeiros bairros liberados para conhecer e escolher hoje.",
+    "badge": "Bairro liberado",
+    "verFotos": "Ver renders",
+    "planAlt": "Planta geral da Aquadelta",
     "names": [
-      "Bairro 1",
-      "Bairro 2",
-      "Bairro 3"
+      "Navegantes",
+      "Veleros",
+      "Regatas Sur"
+    ],
+    "descriptions": [
+      "Setor residencial consolidado com lotes náuticos, conectado pelo passeio central.",
+      "Lotes com amarras e saída direta para o circuito náutico.",
+      "Lotes sobre a lagoa interna com piers e visuais diretas."
     ]
   },
   "paseoCentral": {
@@ -74,8 +86,9 @@
     "body": "Lojas, escola e tudo o necessário para a vida diária, integrado dentro do terreno. A zona comercial de Aquadelta foi pensada para que você não precise sair do bairro para nada."
   },
   "galeria": {
-    "title": "CONHEÇA AQUADELTA",
-    "highlight": "Assista ao vídeo"
+    "badge": "Masterplan & Amenities",
+    "title": "Tudo o que você imagina, em um só lugar.",
+    "highlight": "Descubra cada espaço e experiência da Aquadelta"
   },
   "noticias": {
     "title": "NOTÍCIAS",

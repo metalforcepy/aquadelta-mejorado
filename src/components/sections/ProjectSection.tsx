@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Download, MessageCircle, Sparkles, Compass, X } from "lucide-react";
+import { MessageCircle, Sparkles, Compass, X } from "lucide-react";
 import SectionWrapper from "../shared/SectionWrapper";
 import LazyImage from "../shared/LazyImage";
 import { PROJECT_MASTERPLAN } from "../../data/content";
@@ -147,14 +147,14 @@ export default function ProjectSection() {
         className="pointer-events-none absolute -bottom-32 right-10 w-[500px] h-[400px] bg-[#001e33] blur-[140px]"
       />
 
-      {/* 1. Cabecera Editorial */}
+      {/* 1. Cabecera Editorial — sin el título "EL PROYECTO": el titular es la frase */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 mb-8 lg:mb-12">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001e33] border border-[#88DBDF]/30 text-[#88DBDF] text-xs uppercase tracking-[0.25em] font-semibold mb-4 backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001e33] border border-[#88DBDF]/30 text-[#88DBDF] text-xs uppercase tracking-[0.25em] font-semibold mb-5 backdrop-blur-md"
         >
           <Compass size={14} />
           <span>Masterplan & Territorio</span>
@@ -165,40 +165,69 @@ export default function ProjectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-titulares text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[0.16em] uppercase text-[#D9D9D6]"
+          className="font-titulares text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[0.14em] uppercase text-[#D9D9D6] leading-tight"
         >
-          {t("elProyecto.title")}
+          {t("elProyecto.highlight")}
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-3 font-destacados text-2xl sm:text-3xl text-[#E5B263] font-normal"
-        >
-          {t("elProyecto.highlight")}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-3 font-textos text-sm sm:text-base lg:text-lg text-[#D9D9D6]/85 font-light leading-relaxed max-w-2xl mx-auto"
+          className="mt-5 font-textos text-sm sm:text-base lg:text-lg text-[#D9D9D6]/85 font-light leading-relaxed max-w-2xl mx-auto"
         >
           {t("elProyecto.body")}
         </motion.p>
       </div>
 
-      {/* 2. MAPA A PANTALLA COMPLETA */}
+      {/* 2. LEYENDA DE PUNTOS — arriba del plano, en contenedor semitransparente */}
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-3 sm:px-6 lg:px-8 mb-4">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-lg px-4 py-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+            {AMENITIES_LIST.map((amenity) => {
+              const isCurrent = activeSpot?.id === amenity.id;
+              return (
+                <button
+                  key={amenity.id}
+                  onClick={() => setActiveSpot(isCurrent ? null : amenity)}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-200 ${
+                    isCurrent
+                      ? "bg-white/15 border border-[#E5B263]/70 scale-105"
+                      : "bg-white/[0.04] border border-white/10 hover:bg-white/[0.08]"
+                  }`}
+                >
+                  <span
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold transition-all ${
+                      isCurrent
+                        ? "border-white bg-[#E5B263] text-[#002f4d]"
+                        : "border-[#E5B263]/80 bg-[#0c3a54] text-white"
+                    }`}
+                  >
+                    {amenity.id}
+                  </span>
+                  <span
+                    className={`font-textos text-[11px] sm:text-xs whitespace-nowrap transition-colors ${
+                      isCurrent ? "text-[#E5B263] font-semibold" : "text-[#D9D9D6]"
+                    }`}
+                  >
+                    {amenity.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* 3. MAPA A PANTALLA COMPLETA */}
       <div className="w-full relative px-2 sm:px-4 lg:px-6 mb-8">
         <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#001e33] border border-white/10 shadow-2xl">
-          
+
           {/* Scroll horizontal en móvil */}
           <div className="relative w-full overflow-x-auto no-scrollbar">
             <div className="relative w-full min-w-[760px] sm:min-w-full">
-              
+
               {/* Imagen del mapa */}
               <LazyImage
                 src={PROJECT_MASTERPLAN.src}
@@ -318,73 +347,26 @@ export default function ProjectSection() {
           </AnimatePresence>
 
         </div>
-
-        {/* 3. BARRA INFERIOR DE AMENITIES RESPONSIVE */}
-        <div className="w-full mt-4">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-            {AMENITIES_LIST.map((amenity) => {
-              const isCurrent = activeSpot?.id === amenity.id;
-              return (
-                <button
-                  key={amenity.id}
-                  onClick={() => setActiveSpot(isCurrent ? null : amenity)}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-200 ${
-                    isCurrent
-                      ? "bg-white/15 border border-[#E5B263]/70 scale-105"
-                      : "bg-white/[0.04] border border-white/10 hover:bg-white/[0.08]"
-                  }`}
-                >
-                  <span
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold transition-all ${
-                      isCurrent
-                        ? "border-white bg-[#E5B263] text-[#002f4d]"
-                        : "border-[#E5B263]/80 bg-[#0c3a54] text-white"
-                    }`}
-                  >
-                    {amenity.id}
-                  </span>
-                  <span
-                    className={`font-textos text-[11px] sm:text-xs whitespace-nowrap transition-colors ${
-                      isCurrent ? "text-[#E5B263] font-semibold" : "text-[#D9D9D6]"
-                    }`}
-                  >
-                    {amenity.label}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
-      {/* 4. Botones CTA */}
+      {/* 4. Botón CTA — solo "Consultar lotes" */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-6 border-t border-white/10"
+          className="flex items-center justify-center pt-6 border-t border-white/10"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full shrink-0 mx-auto">
-            <a
-              href="#contacto"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#E5B263] hover:bg-[#D4A152] text-[#003452] px-7 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-bold shadow-xl shadow-[#E5B263]/25 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
-            >
-              <Download size={16} />
-              <span>Descargar Masterplan PDF</span>
-            </a>
-
-            <a
-              href="https://wa.me/XXXXXXXXXXX"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 hover:border-[#E5B263] bg-white/[0.05] hover:bg-white/10 text-white px-6 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-medium transition-all duration-300 active:scale-95 text-center"
-            >
-              <MessageCircle size={16} className="text-[#E5B263]" />
-              <span>Consultar Lotes</span>
-            </a>
-          </div>
+          <a
+            href="https://wa.me/XXXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E5B263] hover:bg-[#D4A152] text-[#003452] px-8 py-3.5 font-textos text-xs sm:text-sm uppercase tracking-wider font-bold shadow-xl shadow-[#E5B263]/25 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
+          >
+            <MessageCircle size={16} />
+            <span>{t("elProyecto.ctaLotes", "Consultar Lotes")}</span>
+          </a>
         </motion.div>
       </div>
     </SectionWrapper>

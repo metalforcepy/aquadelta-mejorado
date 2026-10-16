@@ -47,4 +47,6 @@ export interface BarrioCardData {
   folderPath: string;
   image: string;
   secondaryImages: string[];
+  /** Posición (%) del barrio sobre la planta general, para resaltarlo al hacer clic */
+  planHotspot?: { top: number; left: number };
 }
